@@ -11,11 +11,18 @@ const TodoForm = (props: any) => {
           className="form-control"
           id="description"
           placeholder="Adicione uma tarefa"
+          value={props.description}
+          onChange={(e) => props.handleChange(e)}
         />
       </Grid>
 
       <Grid cols="12 3 2">
-        <IconButton hide={false} icon="plus" styleButton="primary" />
+        <IconButton
+          hide={false}
+          icon="plus"
+          styleButton="primary"
+          onClick={props.handleAdd}
+        />
       </Grid>
     </div>
   );

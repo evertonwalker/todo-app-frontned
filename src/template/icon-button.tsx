@@ -1,5 +1,5 @@
 import React from "react";
-
+import If from "./if";
 interface IconButtonInterface {
   icon: string;
   styleButton: string;
@@ -8,18 +8,16 @@ interface IconButtonInterface {
 }
 
 const IconButton = (props: IconButtonInterface) => {
-  if (props.hide) {
-    return null;
-  } else {
-    return (
+  return (
+    <If test={!props.hide}>
       <button
         className={"btn btn-" + props.styleButton}
         onClick={props.onClick}
       >
         <i className={"fa fa-" + props.icon}></i>
       </button>
-    );
-  }
+    </If>
+  );
 };
 
 export default IconButton;
